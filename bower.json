@@ -24,6 +24,7 @@
     "queryloader2": "~3.0.6",
     "wow": "~1.0.3",
     "animate.css": "~3.2.0",
-    "retinajs": "~1.3.0"
+    "retinajs": "~1.3.0",
+    "jquery": "~2.1.3"
   }
 }
