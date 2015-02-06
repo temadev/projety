@@ -2,25 +2,24 @@ extends ../layouts/main
 block meta
   title Войти
 block content
-  #block-page.content-block
-    .container
-      .row
-        .col-md-8.col-md-offset-2
-          .page-content
-            .page-header
-              h1 Войти
-            form#loginForm.form-horizontal(role='form')
-              .form-group
-                label.col-lg-3.control-label(for='loginEmail') Email
-                .col-lg-6
-                  input.form-control#loginEmail(type='email', name='loginEmail', placeholder='Email')
-              .form-group
-                label.col-lg-3.control-label(for='loginPassword') Пароль
-                .col-lg-6
-                  input.form-control#loginPassword(type='password', name='loginPassword', placeholder='Пароль')
-              .form-group
-                .col-lg-offset-3.col-lg-6
-                  #errors.hidden.text-danger.alert.alert-danger
-                  button.btn.btn-lg.btn-primary(type='submit') Войти
-                  | &nbsp;
-                  | У вас нет логина? <a href="/register">Регистрируйтесь</a>
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        .page-content
+          .page-header
+            h1 Войти
+          form#loginForm.form-horizontal(role='form')
+            .form-group
+              label.col-lg-3.control-label(for='loginEmail') Email
+              .col-lg-6
+                input.form-control#loginEmail(type='email', name='loginEmail', placeholder='Email')
+            .form-group
+              label.col-lg-3.control-label(for='loginPassword') Пароль
+              .col-lg-6
+                input.form-control#loginPassword(type='password', name='loginPassword', placeholder='Пароль')
+            .form-group
+              .col-lg-offset-3.col-lg-6
+                #errors.hidden.text-danger.alert.alert-danger
+                button.btn.btn-lg.btn-primary(type='submit') Войти
+                | &nbsp;
+                | У вас нет логина? <a href="/register">Регистрируйтесь</a>

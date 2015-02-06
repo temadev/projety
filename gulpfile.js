@@ -12,7 +12,7 @@ var gulp = require('gulp')
   , server = tinylr();
 
 // LiveReload port. Change it only if there's a conflict
-var lvr_port = 35729;
+var lvr_port = 35725;
 
 // SOURCES CONFIG 
 var source = {

@@ -19,6 +19,11 @@
     "form.validation": "~0.5.3",
     "modernizr": "~2.8.3",
     "fontawesome": "~4.3.0",
-    "jquery-serialize-object": "~2.4.5"
+    "pixeden-stroke-7-icon": "*",
+    "fullpage": "~2.5.6",
+    "queryloader2": "~3.0.6",
+    "wow": "~1.0.3",
+    "animate.css": "~3.2.0",
+    "retinajs": "~1.3.0"
   }
 }

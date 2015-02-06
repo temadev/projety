@@ -2,4 +2,97 @@ extends layouts/main
 block meta
   title Projety
 block content
-  h1= title
+  #content.page_sections
+    section.section-hero.inverse(data-anchor='hero')
+      .overlay
+      .container
+        .hero-inner
+          .hero-copy Когда бизнесу нужен надежный
+          h1.big_white
+            span Digital партнер
+          .hero-copy.bigger Интернет-агентство полного цикла <strong>PROJETY</strong> предоставит вашей компании великолепный сервис!
+        .next-holder.wow.bounce
+          a(href='#services')
+            span как мы это делаем?
+            i.fa.fa-lg.fa-chevron-circle-down
+
+    section.section-services(data-anchor='services')
+      .container
+
+        .title-holder
+          h2 Digital-стратегия в&nbsp;действии
+            small мы делаем анализ вашего бизнеса, внедряем технологии, повышаем эффективность
+
+        .content-holder
+          .services-do
+
+            .digital-do.wow.bounceIn
+              span.icon
+                i.pe-7s-way
+              strong DIGITAL<br>СТРАТЕГИЯ
+
+            .marketing-do.wow.bounceIn
+              span.icon
+                i.pe-7s-display1
+              strong ИНТЕРНЕТ<br>МАРКЕТИНГ
+
+            .web-do.wow.bounceIn
+              span.icon
+                i.pe-7s-browser
+              strong ВЕБ<br>ПРОДАКШН
+
+            .design-do.wow.bounceIn
+              span.icon
+                i.pe-7s-pen
+              strong ГРАФИЧЕСКИЙ<br>ДИЗАЙН
+
+            .sell-do.wow.bounceIn
+              span.icon
+                i.pe-7s-graph1
+              strong РОСТ<br>ПРОДАЖ
+
+            .client-do.wow.bounceIn
+              span.icon
+                i.pe-7s-users
+              strong НОВЫЕ<br>КЛИЕНТЫ
+
+            .loyal-do.wow.bounceIn
+              span.icon
+                i.pe-7s-smile
+              strong ПОВЫШЕНИЕ<br>ЛОЯЛЬНОСТИ
+
+        .next-holder
+          a(href='#portfolio')
+            span посмотрите наши работы
+            i.fa.fa-lg.fa-chevron-circle-down
+
+    section.section-portfolio.inverse(data-anchor='portfolio')
+      .container
+        .title-holder
+          h2 Наши работы
+            small
+
+        .content-holder
+          .slide(data-anchor='slide1') 1
+          .slide(data-anchor='slide2') 2
+          .slide(data-anchor='slide3') 3
+          .slide(data-anchor='slide4') 4
+
+        .next-holder
+          a(href='#features')
+            span как мы создаем такие проекты?
+            i.fa.fa-lg.fa-chevron-circle-down
+    section.section-features(data-anchor='features')
+      .container
+        .title-holder
+          h2 Как это работает
+            small Схема работы нашей студии
+        .next-holder
+          a(href='#contacts')
+            span давайте работать вместе
+            i.fa.fa-lg.fa-chevron-circle-down
+    section.section-contacts(data-anchor='contacts')
+      .container
+        .title-holder
+          h2 Контакты
+            small Давайте работать вместе

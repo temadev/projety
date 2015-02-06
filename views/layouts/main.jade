@@ -4,16 +4,13 @@ html(lang='en')
     block active-item
     include ../partials/head
   body
-    section#wrapper
-      header#header
-        nav.navbar.navbar-inverse.navbar-fixed-top
-          .container
-            include ../partials/top-navbar
-      section#content
-        .container
-          block content
-      footer#footer
-        .container: .copyright &copy; 2015 Projety
+    #overlay
+    header#header
+      nav.navbar.navbar-fixed-top
+        include ../partials/top-navbar
+    block content
+    footer#footer
+      .container: .copyright &copy; 2015 Projety
     block body_child
     include ../partials/scripts
     block page_scripts

@@ -167,7 +167,9 @@
 
   $(function () {
 
-    $('body').on('hidden.bs.modal', '.modal', function () {
+    var body = $('body');
+
+    body.on('hidden.bs.modal', '.modal', function () {
       $(this).removeData('bs.modal');
     });
 
@@ -181,6 +183,99 @@
         }
       });
     });
+
+    /* WOW plugin triggers animation.css on scroll
+     ================================================== */
+    var wow = new WOW();
+
+
+    /* Loader - Remove it to disable loader
+     ================================================== */
+    body.queryLoader2({
+      onComplete: function () {
+        wow.init();
+      },
+      backgroundColor: '#222',
+      overlayId: 'overlay',
+      barHeight: 2,
+      percentage: true,
+      minimumTime: 1000
+    });
+
+
+    /* Responsive Navigation
+     ================================================== */
+
+    function mobile_menu_dim() {
+      var nav_width = $(window).width()
+        , nav_height = $(window).outerHeight();
+      $("#navbar").width(nav_width).height(nav_height - 50);
+    }
+
+    $("#navbar").hide();
+    mobile_menu_dim();
+
+    $('#menu-toggle-wrapper').on('click', function (event) {
+      $(this).toggleClass('open');
+      $('#navbar').slideToggle(200, function () {
+        mobile_menu_dim();
+      });
+      event.preventDefault();
+    });
+
+    $('#navbar li a').on('click', function (event) {
+      $('#menu-toggle-wrapper').toggleClass('open');
+      $('#navbar').slideToggle(200);
+    });
+
+    $(window).resize(function () {
+      mobile_menu_dim();
+    });
+
+
+    /* FullPage Scroll
+     ================================================== */
+
+    $('.page_sections').fullpage({
+      menu: '#navbar ul',
+      anchors: ['hero', 'services', 'portfolio', 'features', 'contacts'],
+      slidesNavPosition: 'top',
+      scrollBar: true,
+      sectionSelector: 'section',
+      slideSelector: '.slide'
+    });
+
+  });
+
+}(jQuery, window, document));
+
+(function ($, window, document) {
+
+  $(function () {
+
+    blockPosition();
+
+    function blockPosition() {
+      var content = $('.content-holder')
+        , contentHeight = content.height()
+        , services = $('.services-do')
+        , servicesHeight = services.outerHeight();
+
+      services.css('top', contentHeight / 2 + 'px');
+      services.css('margin-top', '-' + servicesHeight / 2 + 'px');
+
+      var doDigital = $('.digital-do')
+        , doMarketing = $('.marketing-do')
+        , doWeb = $('.web-do')
+        , doDesign = $('.design-do')
+        , doSell = $('.sell-do')
+        , doClient = $('.client-do')
+        , doLoyal = $('.loyal-do');
+
+      window.onresize = function() {
+        blockPosition();
+      };
+    }
 
   });
 
