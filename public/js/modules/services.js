@@ -64,12 +64,16 @@
         element.removeClass('active').animate(defaultPosition, function () {
           element.removeClass('do-big');
           element.siblings().removeClass('bounceOutRight').addClass('bounceInRight');
-          cb(false);
+          if (cb && typeof(cb) === "function") {
+            cb();
+          }
         });
       } else {
         element.addClass('active').animate({left: '50%', top: '50%'}, function () {
           element.addClass('do-big');
-          cb(true);
+          if (cb && typeof(cb) === "function") {
+            cb(true);
+          }
         });
         element.siblings().removeClass('bounceInRight').addClass('bounceOutRight');
       }
