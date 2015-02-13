@@ -235,7 +235,7 @@ strong, b {
       display: block;
       text-transform: uppercase;
       color: #fff;
-      font-size: 11px;
+      font-size: 10px;
       line-height: 1.8;
       font-weight: 700;
     }
@@ -246,7 +246,7 @@ strong, b {
   z-index: 999;
   position: absolute;
   text-align: center;
-  top: 140px;
+  top: 100px;
   bottom: 60px;
   left: 0;
   right: 0;
@@ -333,9 +333,27 @@ strong, b {
 }
 
 .section-services {
+  .services-title {
+    position: absolute;
+    top: -40px;
+    left: 5%;
+    width: 90%;
+    text-align: center;
+    p {
+      font: 12px 'Open Sans',Arial,sans-serif;
+      font-weight: 300;
+      color: #808080;
+    }
+  }
   .services-do {
     position: relative;
     height: 270px;
+  }
+  .do, .do * {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
   .digital-do, .marketing-do, .web-do, .design-do, .sell-do, .client-do, .loyal-do {
     position: absolute;
@@ -380,36 +398,104 @@ strong, b {
   .web-do {
     top: 0;
     left: 50%;
+    margin-top: 0;
     margin-left: -35px;
   }
   .design-do {
     top: 30%;
-    right: 23%;
+    left: 77%;
     margin-top: -35px;
-    margin-right: -35px;
+    margin-left: -35px;
   }
   .client-do {
-    bottom: 0;
+    top: 100%;
     left: 50%;
+    margin-top: -70px;
     margin-left: -35px;
     background: #fff;
     color: rgb(230, 174, 72);
   }
   .sell-do {
-    bottom: 30%;
+    top: 70%;
     left: 23%;
+    margin-top: -35px;
     margin-left: -35px;
-    margin-bottom: -35px;
     background: #fff;
     color: rgb(230, 174, 72);
   }
   .loyal-do {
-    bottom: 30%;
-    right: 23%;
-    margin-right: -35px;
-    margin-bottom: -35px;
+    top: 70%;
+    left: 77%;
+    margin-top: -35px;
+    margin-left: -35px;
     background: #fff;
     color: rgb(230, 174, 72);
+  }
+  .do-big {
+    margin-top: -45px;
+    margin-left: -45px;
+    width: 90px;
+    height: 90px;
+    padding-top: 10px;
+    .icon i { font-size: 38px; }
+    strong { font-size: 10px; }
+  }
+
+  .marketing-service {
+    display: none;
+    .marketing-title {
+      position: absolute;
+      top: 70%;
+      width: 100%;
+      text-align: center;
+      font: 12px 'Open Sans',Arial,sans-serif;
+      font-weight: 300;
+      color: #808080;
+    }
+    .marketing-one, .marketing-two, .marketing-three {
+      position: absolute;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      padding: 10px 4px 0;
+      text-align: center;
+      font-size: 7px;
+      line-height: 1;
+      background: #fff;
+      color: rgb(230, 174, 72);
+      border: 1px solid rgb(230, 174, 72);
+      .icon i {
+        display: block;
+        font-size: 26px;
+      }
+      strong {
+        display: block;
+        font-size: 7px;
+        line-height: 1.2;
+        padding: 2px 0;
+      }
+    }
+    .marketing-one {
+      position: absolute;
+      top: 30%;
+      left: 23%;
+      margin-top: -35px;
+      margin-left: -35px;
+    }
+    .marketing-two {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-top: 0;
+      margin-left: -35px;
+    }
+    .marketing-three {
+      position: absolute;
+      top: 30%;
+      left: 77%;
+      margin-top: -35px;
+      margin-left: -35px;
+    }
   }
 }
 
