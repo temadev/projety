@@ -310,9 +310,7 @@ strong, b {
   .hero-copy {
     color: #fff;
     margin: 0 15px;
-    font: 13px 'Roboto Slab', serif;
-    line-height: 21px;
-    font-weight: 300;
+    font: 300 13px/21px 'Roboto Slab', serif;
     &.bigger {
       font-size: 16px;
     }
@@ -345,9 +343,14 @@ strong, b {
       color: #808080;
     }
   }
+  .services-description {
+    top: 70%;
+    width: 100%;
+    position: absolute;
+    font-size: 18px;
+  }
   .services-do {
     position: relative;
-    height: 270px;
   }
   .do, .do * {
     -webkit-transition: all 0.5s ease;
@@ -355,147 +358,29 @@ strong, b {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
   }
-  .digital-do, .marketing-do, .web-do, .design-do, .sell-do, .client-do, .loyal-do {
+  .do {
+    cursor: pointer;
     position: absolute;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
     color: rgb(255, 255, 255);
-    padding: 10px 4px 0;
-    text-align: center;
-    font-size: 7px;
-    line-height: 1;
     background: rgb(230, 174, 72);
     border: 1px solid rgb(230, 174, 72);
     .icon i {
       display: block;
-      font-size: 26px;
     }
     strong {
       display: block;
-      font-size: 7px;
       line-height: 1.2;
       padding: 2px 0;
     }
   }
-  .digital-do {
-    top: 50%;
-    left: 50%;
-    margin-top: -45px;
-    margin-left: -45px;
-    width: 90px;
-    height: 90px;
-    padding-top: 10px;
-    .icon i { font-size: 38px; }
-    strong { font-size: 10px; }
-  }
-  .marketing-do {
-    top: 30%;
-    left: 23%;
-    margin-top: -35px;
-    margin-left: -35px;
-  }
-  .web-do {
-    top: 0;
-    left: 50%;
-    margin-top: 0;
-    margin-left: -35px;
-  }
-  .design-do {
-    top: 30%;
-    left: 77%;
-    margin-top: -35px;
-    margin-left: -35px;
-  }
-  .client-do {
-    top: 100%;
-    left: 50%;
-    margin-top: -70px;
-    margin-left: -35px;
+  .service-invert {
     background: #fff;
     color: rgb(230, 174, 72);
-  }
-  .sell-do {
-    top: 70%;
-    left: 23%;
-    margin-top: -35px;
-    margin-left: -35px;
-    background: #fff;
-    color: rgb(230, 174, 72);
-  }
-  .loyal-do {
-    top: 70%;
-    left: 77%;
-    margin-top: -35px;
-    margin-left: -35px;
-    background: #fff;
-    color: rgb(230, 174, 72);
-  }
-  .do-big {
-    margin-top: -45px;
-    margin-left: -45px;
-    width: 90px;
-    height: 90px;
-    padding-top: 10px;
-    .icon i { font-size: 38px; }
-    strong { font-size: 10px; }
   }
 
-  .marketing-service {
+  .sub-services {
     display: none;
-    .marketing-title {
-      position: absolute;
-      top: 70%;
-      width: 100%;
-      text-align: center;
-      font: 12px 'Open Sans',Arial,sans-serif;
-      font-weight: 300;
-      color: #808080;
-    }
-    .marketing-one, .marketing-two, .marketing-three {
-      position: absolute;
-      border-radius: 50%;
-      width: 70px;
-      height: 70px;
-      padding: 10px 4px 0;
-      text-align: center;
-      font-size: 7px;
-      line-height: 1;
-      background: #fff;
-      color: rgb(230, 174, 72);
-      border: 1px solid rgb(230, 174, 72);
-      .icon i {
-        display: block;
-        font-size: 26px;
-      }
-      strong {
-        display: block;
-        font-size: 7px;
-        line-height: 1.2;
-        padding: 2px 0;
-      }
-    }
-    .marketing-one {
-      position: absolute;
-      top: 30%;
-      left: 23%;
-      margin-top: -35px;
-      margin-left: -35px;
-    }
-    .marketing-two {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      margin-top: 0;
-      margin-left: -35px;
-    }
-    .marketing-three {
-      position: absolute;
-      top: 30%;
-      left: 77%;
-      margin-top: -35px;
-      margin-left: -35px;
-    }
   }
 }
 
@@ -507,65 +392,10 @@ strong, b {
 @media (min-width: @screen-sm-min) {
   .section-hero {
     .hero-copy {
-      font: 22px 'Roboto Slab', serif;
-      line-height: 32px;
+      font: 22px/32px 'Roboto Slab', serif;
       .bigger { font-size: 32px; }
     }
     h1.big_white { font-size: 56px; }
-  }
-
-  .section-services {
-    .digital-do,
-    .marketing-do,
-    .web-do,
-    .design-do,
-    .sell-do,
-    .client-do,
-    .loyal-do {
-      width: 180px;
-      height: 180px;
-      padding-top: 45px;
-      font-size: 12px;
-      line-height: 1.4;
-    }
-    .digital-do {
-      top: 160px;
-      left: 50%;
-      margin-left: -140px;
-      width: 280px;
-      height: 280px;
-      padding-top: 65px;
-    }
-    .marketing-do {
-      top: 0;
-      left: 25%;
-      margin-left: -90px;
-    }
-    .web-do {
-      top: 200px;
-      left: 12%;
-      margin-left: -90px;
-    }
-    .design-do {
-      top: 410px;
-      left: 25%;
-      margin-left: -90px;
-    }
-    .sell-do {
-      top: 0;
-      right: 25%;
-      margin-right: -90px;
-    }
-    .client-do {
-      top: 200px;
-      right: 12%;
-      margin-right: -90px;
-    }
-    .loyal-do {
-      top: 410px;
-      right: 25%;
-      margin-right: -90px;
-    }
   }
 }
 
@@ -576,5 +406,39 @@ strong, b {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg-min) {
-
+  .content-holder {
+    left: 10%;
+    right: 10%;
+  }
+  .title-holder {
+    h2 {
+      font-size: 32px;
+    }
+  }
+  .section-hero {
+    .hero-copy {
+      font: 300 24px/28px 'Roboto Slab', serif;
+      &.bigger {
+        font-size: 32px;
+        line-height: 42px;
+      }
+    }
+    h1.big_white {
+      font-size: 72px;
+    }
+  }
+  .section-services {
+    .services-title p {
+      font-size: 16px;
+    }
+  }
+  .next-holder {
+    a span {
+      font-size: 14px;
+      line-height: 36px;
+    }
+    .fa {
+      font-size: 28px;
+    }
+  }
 }
