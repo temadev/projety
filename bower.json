@@ -16,7 +16,6 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.2",
-    "form.validation": "~0.5.3",
     "modernizr": "~2.8.3",
     "fontawesome": "~4.3.0",
     "pixeden-stroke-7-icon": "*",
