@@ -55,6 +55,7 @@ router.post('/services', function (req, res, next) {
       items: [
         {
           title: 'Поисковое продвижение',
+          content: '<p>Поисковое продвижение</p>',
           icon: 'pe-7s-rocket',
           class: 'marketing-one do service-invert',
           top: '25%',
@@ -63,6 +64,7 @@ router.post('/services', function (req, res, next) {
         },
         {
           title: 'Рекламные кампании',
+          content: '<p>Рекламные кампании</p>',
           icon: 'pe-7s-graph',
           class: 'marketing-two do service-invert',
           top: '2%',
@@ -71,6 +73,7 @@ router.post('/services', function (req, res, next) {
         },
         {
           title: 'Оптимизация конверсий',
+          content: '<p>Оптимизация конверсий</p>',
           icon: 'pe-7s-filter',
           class: 'marketing-three do service-invert',
           top: '25%',

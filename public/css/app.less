@@ -333,7 +333,6 @@ strong, b {
 .section-services {
   .services-title {
     position: absolute;
-    top: -40px;
     left: 5%;
     width: 90%;
     text-align: center;
@@ -386,10 +385,71 @@ strong, b {
 
 .section-portfolio {
   background-color: #222;
+  .portfolio-title {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    text-align: center;
+    a {
+      font-size: 24px;
+    }
+    strong {
+      display: block;
+      font: 18px 'Open Sans',Arial,sans-serif;
+      font-weight: 700;
+      color: #FFF;
+      text-transform: uppercase;
+    }
+    p {
+      font: 24px 'Open Sans',Arial,sans-serif;
+      font-weight: 300;
+    }
+  }
+  .portfolio-do {
+    position: relative;
+    .slide {
+      position: relative;
+    }
+  }
+  .project-img {
+    width: 100%;
+  }
+  .project-description {
+    text-align: left;
+    color: #fff;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    .h3 {
+      font-weight: 400;
+      color: #E6AE48;
+    }
+  }
+}
+
+.fp-controlArrow {
+  &.fp-prev {
+    left: -35px;
+    border-width: 15px 18px 15px 0;
+    &:hover {
+      border-color: rgba(0, 0, 0, 0) rgba(255, 255, 255, 1) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+  }
+  &.fp-next {
+    right: -35px;
+    border-width: 15px 0 15px 18px;
+    &:hover {
+      border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(255, 255, 255, 1);
+    }
+  }
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
+  .content-holder {
+    left: 10%;
+    right: 10%;
+  }
   .section-hero {
     .hero-copy {
       font: 22px/32px 'Roboto Slab', serif;
@@ -406,10 +466,6 @@ strong, b {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg-min) {
-  .content-holder {
-    left: 10%;
-    right: 10%;
-  }
   .title-holder {
     h2 {
       font-size: 32px;

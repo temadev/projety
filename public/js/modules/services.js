@@ -27,8 +27,10 @@
     function servicesInit(services) {
 
       servicesBlock.css('height', servicesHeight + 'px');
-      servicesBlock.css('top', 20 + contentHeight / 2 + 'px');
+      servicesBlock.css('top', contentHeight * 0.05 + contentHeight / 2 + 'px');
       servicesBlock.css('margin-top', '-' + servicesHeight / 2 + 'px');
+      servicesBlock.append('<div class="services-title"><p>' + services[0].description + '</p></div>');
+      $('.services-title').css('top', '-' + contentHeight * 0.075 + 'px');
 
       $.each(services, function (i, service) {
         servicesBlock.append(getService(service, true));
@@ -36,17 +38,36 @@
         serviceClass.on('click', function () {
           var $this = $(this);
           getCurObj(services, 'class', $this.data('title'), function (obj) {
-            var itemsClass = '.' + obj.itemsClass.split(' ')[0];
-            changePosition(services, $this, function (toggle) {
-              if (toggle) {
-                $('.services-title p').text(obj.description);
-                $('.services-description').html(obj.content);
-                servicesBlock.find(itemsClass).fadeIn();
-              }
-              else {
-                servicesBlock.find(itemsClass).fadeOut();
-              }
-            });
+            if (!obj.main) {
+              var itemsClass = '.' + obj.itemsClass.split(' ')[0];
+              changePosition(services, $this, function (toggle) {
+                if (toggle) {
+                  $('.services-title p').text(obj.description);
+                  $('.services-description').html(obj.content);
+                  servicesBlock.find(itemsClass).fadeIn();
+                }
+                else {
+                  servicesBlock.find(itemsClass).fadeOut();
+                }
+              });
+              $.each(obj.items, function (i, item) {
+                var itemClass = $('.' + item.class.split(' ')[0])
+                  , itemDescription = $('.services-description');
+                itemClass.on('click', function () {
+                  var $this = $(this);
+                  getCurObj(obj.items, 'class', $this.data('title'), function (e) {
+                    if (e.content) {
+                      if (itemDescription.html() !== e.content) {
+                        itemDescription.html(e.content);
+                      }
+                      else {
+                        itemDescription.html(obj.content);
+                      }
+                    }
+                  });
+                })
+              });
+            }
           });
         });
       });

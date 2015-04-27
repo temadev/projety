@@ -238,17 +238,68 @@
 
     $('.page_sections').fullpage({
       menu: '#navbar ul',
-      anchors: ['hero', 'services', 'portfolio', 'features', 'contacts'],
+      anchors: ['hero', 'services', 'portfolio-1', 'portfolio-2', 'portfolio-3', 'features', 'contacts'],
       slidesNavPosition: 'top',
       scrollBar: true,
       sectionSelector: 'section',
-      slideSelector: '.slide'
+      slideSelector: '.slide',
+      verticalCentered: false
     });
 
   });
 
 }(jQuery, window, document));
 
+(function ($, window, document) {
+  $(function () {
+
+    var content = $('.content-holder')
+      , contentHeight = content.height()
+      , portfolioBlock = $('.portfolio-do')
+      , sectionServices = $('.section-portfolio')
+      , portfolioHeight = sectionServices.outerHeight() * .75;
+
+    var portfolio = [
+      {
+        title: 'ГТС',
+        description: '<a href="http://gts76.ru">ГлобалТехноСтрой</a> — компания занимается арендой спецтехники'
+      },
+      {
+        title: 'Выбери.by',
+        description: '<a href="http://vibery.by">Выбери.by</a> — создание информационного портала о банках Беларуси'
+      },
+      {
+        title: 'Росконкурс',
+        description: '<a href="http://cvsi.ru">Росконкурс</a> — создание и сопровождение портала Всероссийских конкурсов'
+      }
+    ];
+
+    portfolioInit();
+    window.onresize = function () {
+      portfolioInit();
+    };
+
+    function portfolioInit() {
+
+      sectionServices.each(function (i) {
+        portfolioBlock = $(this).find('.portfolio-do');
+        portfolioBlock.css('height', portfolioHeight + 'px');
+        portfolioBlock.css('top', contentHeight*0.05 + contentHeight / 2 + 'px');
+        portfolioBlock.css('margin-top', '-' + portfolioHeight / 2 + 'px');
+        portfolioBlock.append('<div class="portfolio-title"><p>' + portfolio[i].description + '</p></div>');
+        $('.portfolio-title').css('top', '-' + contentHeight*0.075 + 'px');
+
+        var portfolioDescription = portfolioBlock.find('.project-description')
+          , descriptionHeight = portfolioDescription.outerHeight();
+
+        portfolioDescription.css('margin-top', '-' + (descriptionHeight/2 + contentHeight*0.05) + 'px');
+        portfolioDescription.css('top', '50%');
+      });
+
+    }
+
+  });
+}(jQuery, window, document));
 (function ($, window, document) {
   $(function () {
 
@@ -278,8 +329,10 @@
     function servicesInit(services) {
 
       servicesBlock.css('height', servicesHeight + 'px');
-      servicesBlock.css('top', 20 + contentHeight / 2 + 'px');
+      servicesBlock.css('top', contentHeight * 0.05 + contentHeight / 2 + 'px');
       servicesBlock.css('margin-top', '-' + servicesHeight / 2 + 'px');
+      servicesBlock.append('<div class="services-title"><p>' + services[0].description + '</p></div>');
+      $('.services-title').css('top', '-' + contentHeight * 0.075 + 'px');
 
       $.each(services, function (i, service) {
         servicesBlock.append(getService(service, true));
@@ -287,17 +340,36 @@
         serviceClass.on('click', function () {
           var $this = $(this);
           getCurObj(services, 'class', $this.data('title'), function (obj) {
-            var itemsClass = '.' + obj.itemsClass.split(' ')[0];
-            changePosition(services, $this, function (toggle) {
-              if (toggle) {
-                $('.services-title p').text(obj.description);
-                $('.services-description').html(obj.content);
-                servicesBlock.find(itemsClass).fadeIn();
-              }
-              else {
-                servicesBlock.find(itemsClass).fadeOut();
-              }
-            });
+            if (!obj.main) {
+              var itemsClass = '.' + obj.itemsClass.split(' ')[0];
+              changePosition(services, $this, function (toggle) {
+                if (toggle) {
+                  $('.services-title p').text(obj.description);
+                  $('.services-description').html(obj.content);
+                  servicesBlock.find(itemsClass).fadeIn();
+                }
+                else {
+                  servicesBlock.find(itemsClass).fadeOut();
+                }
+              });
+              $.each(obj.items, function (i, item) {
+                var itemClass = $('.' + item.class.split(' ')[0])
+                  , itemDescription = $('.services-description');
+                itemClass.on('click', function () {
+                  var $this = $(this);
+                  getCurObj(obj.items, 'class', $this.data('title'), function (e) {
+                    if (e.content) {
+                      if (itemDescription.html() !== e.content) {
+                        itemDescription.html(e.content);
+                      }
+                      else {
+                        itemDescription.html(obj.content);
+                      }
+                    }
+                  });
+                })
+              });
+            }
           });
         });
       });

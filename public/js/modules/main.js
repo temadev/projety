@@ -73,11 +73,12 @@
 
     $('.page_sections').fullpage({
       menu: '#navbar ul',
-      anchors: ['hero', 'services', 'portfolio', 'features', 'contacts'],
+      anchors: ['hero', 'services', 'portfolio-1', 'portfolio-2', 'portfolio-3', 'features', 'contacts'],
       slidesNavPosition: 'top',
       scrollBar: true,
       sectionSelector: 'section',
-      slideSelector: '.slide'
+      slideSelector: '.slide',
+      verticalCentered: false
     });
 
   });

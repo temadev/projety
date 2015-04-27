@@ -47,7 +47,7 @@ function handleError(err) {
 gulp.task('scripts-app', function () {
   // Minify and copy all JavaScript (except vendor scripts)
   return gulp.src(source.scripts.app)
-    //.pipe(uglify())  /* UNCOMMENT TO MINIFY * /
+    //.pipe(uglify())
     .pipe(concat(build.scripts.app.main))
     .pipe(gulp.dest(build.scripts.app.dir))
     .pipe(livereload(server));
